@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>книжные переводы · пасмурный minimal</title>
+    <title>книжные переводы · пасмурный</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
@@ -44,104 +44,68 @@
             color: #1e1e1e;
         }
 
-        .site-title i {
-            color: #3b4b5e;
-        }
-
-        /* Плашка поддержки — толстая, со стимулами */
+        /* Плашка поддержки с адресами кошельков */
         .support-bar {
             background: #d6d6d6;
             border: 4px solid #2f2f2f;
-            padding: 1.2rem 1.8rem;
+            padding: 1.5rem 1.8rem;
             margin-bottom: 2.5rem;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            gap: 1.5rem 2rem;
             box-shadow: 6px 6px 0 #7a7a7a;
         }
 
-        .support-left {
-            flex: 2;
-            min-width: 240px;
-        }
-
-        .support-left .support-text {
-            font-weight: 700;
-            font-size: 1.2rem;
+        .support-header {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 0.8rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
             color: #1e1e1e;
         }
 
-        .support-links {
+        .crypto-list {
             display: flex;
             flex-wrap: wrap;
             gap: 1.5rem 2rem;
         }
 
-        .support-links a {
-            display: inline-flex;
+        .crypto-item {
+            display: flex;
             align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            color: #1e1e1e;
-            font-weight: 600;
-            border-bottom: 3px solid transparent;
-            padding: 0.2rem 0;
-            font-size: 1rem;
-            transition: border-color 0.1s;
-        }
-
-        .support-links a i {
-            font-size: 1.3rem;
-            color: #2f4f6f;
-        }
-
-        .support-links a:hover {
-            border-bottom-color: #2f4f6f;
-        }
-
-        .perks {
-            flex: 1;
-            min-width: 200px;
+            gap: 12px;
             background: #c0c0c0;
             border: 2px solid #2f2f2f;
-            padding: 1rem 1.2rem;
+            padding: 0.8rem 1.5rem;
             box-shadow: inset 0 0 0 1px #f0f0f0;
+            flex: 1 1 300px;
         }
 
-        .perks p {
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 1rem;
-        }
-
-        .perks ul {
-            list-style: none;
-        }
-
-        .perks li {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-            color: #1e1e1e;
-        }
-
-        .perks li i {
+        .crypto-item i {
+            font-size: 1.8rem;
             color: #2f4f6f;
-            width: 20px;
+        }
+
+        .crypto-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .crypto-name {
+            font-weight: 600;
             font-size: 1rem;
         }
 
-        /* Описание */
+        .crypto-address {
+            font-family: monospace;
+            font-size: 0.9rem;
+            background: #f2f2f2;
+            padding: 0.3rem 0.5rem;
+            border: 1px solid #2f2f2f;
+            word-break: break-all;
+        }
+
+        /* Описание проекта (коротко) */
         .bio {
             font-size: 1.2rem;
             background: #dbdbdb;
@@ -152,7 +116,7 @@
             box-shadow: 5px 5px 0 #7a7a7a;
         }
 
-        /* Блок с авторами — ширина 50% */
+        /* Блок с авторами */
         .authors-box {
             width: 50%;
             background: #dbdbdb;
@@ -188,121 +152,130 @@
             width: 20px;
         }
 
-        /* Книги */
-        .books-section h2 {
-            font-weight: 500;
-            font-size: 1.9rem;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-left: 8px solid #2f2f2f;
-            padding-left: 1rem;
-            color: #1e1e1e;
-        }
-
-        .books-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 2rem 1.5rem;
-            margin-bottom: 2.8rem;
-        }
-
-        .book-card {
+        /* Статья о книге */
+        .book-article {
             background: #f2f2f2;
-            border: 3px solid #2f2f2f;
-            padding: 1.2rem 1.2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            transition: 0.1s ease;
-            box-shadow: 4px 4px 0 #9e9e9e;
-        }
-
-        .book-card:hover {
-            transform: translate(-2px, -2px);
+            border: 4px solid #2f2f2f;
+            padding: 2.5rem;
+            margin: 2rem 0 2.5rem;
             box-shadow: 8px 8px 0 #7a7a7a;
-            background: #ffffff;
         }
 
-        .book-cover {
-            width: 100%;
+        .article-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .article-cover {
+            flex: 0 0 260px;
             aspect-ratio: 2/3;
             background: #b0b0b0;
             border: 3px solid #2f2f2f;
-            margin-bottom: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="%232f2f2f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>');
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="%232f2f2f" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>');
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 60px 60px;
+            background-size: 100px 100px;
         }
 
-        .book-info {
-            margin-bottom: 1rem;
+        .article-title-block {
+            flex: 1;
+            min-width: 280px;
         }
 
-        .book-title {
+        .article-title {
+            font-size: 2.8rem;
             font-weight: 700;
-            font-size: 1.25rem;
-            margin-bottom: 0.25rem;
+            line-height: 1.1;
+            margin-bottom: 0.3rem;
             color: #1e1e1e;
         }
 
-        .book-author {
-            font-size: 0.9rem;
+        .article-author {
+            font-size: 1.4rem;
             color: #3e4f62;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.2rem;
         }
 
-        .book-status {
+        .article-series {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #5a5a5a;
+            margin-bottom: 1rem;
+        }
+
+        .article-status {
             display: inline-block;
-            font-size: 0.8rem;
+            font-size: 1rem;
             background: #b9c9da;
-            padding: 0.2rem 1rem;
+            padding: 0.4rem 1.5rem;
             border: 2px solid #2f2f2f;
             font-weight: 600;
+            margin-bottom: 1rem;
         }
 
-        .download-link {
+        .article-content {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #2f2f2f;
+            margin-bottom: 2rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.2rem;
+        }
+
+        .article-content blockquote {
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: #d6d6d6;
+            border-left: 6px solid #2f4f6f;
+            font-style: italic;
+        }
+
+        .download-section {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-top: auto;
-            padding-top: 1rem;
+            gap: 1.5rem;
+            flex-wrap: wrap;
             border-top: 3px solid #2f2f2f;
+            padding-top: 2rem;
+            margin-top: 1rem;
         }
 
-        .download-btn {
+        .download-btn-large {
             background: white;
             border: 3px solid #2f2f2f;
-            padding: 0.5rem 1.2rem;
-            font-size: 0.9rem;
+            padding: 0.9rem 2.2rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: #1e1e1e;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 10px;
             transition: background 0.1s;
+            box-shadow: 4px 4px 0 #9e9e9e;
         }
 
-        .download-btn i {
-            font-size: 0.9rem;
-        }
-
-        .download-btn:hover {
+        .download-btn-large:hover {
             background: #d0d0d0;
+            box-shadow: 2px 2px 0 #9e9e9e;
+            transform: translate(2px, 2px);
         }
 
-        .file-size {
-            font-size: 0.8rem;
+        .file-size-large {
+            font-size: 1.1rem;
             color: #4a4a4a;
             font-weight: 500;
         }
 
-        /* Футер */
+        /* Контакты */
         .contact-footer {
             margin-top: 3rem;
             border-top: 3px solid #2f2f2f;
@@ -371,53 +344,55 @@
         }
 
         @media (max-width: 700px) {
-            .support-bar { flex-direction: column; }
-            .perks { width: 100%; }
+            .support-bar { flex-direction: column; align-items: flex-start; }
             .authors-box { width: 100%; }
+            .article-header { flex-direction: column; align-items: center; text-align: center; }
+            .article-cover { width: 100%; max-width: 300px; }
             .contact-footer { flex-direction: column; align-items: flex-start; }
             .social-icons a { font-size: 2.4rem; }
+            .crypto-list { flex-direction: column; width: 100%; }
+            .crypto-item { width: 100%; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Заголовок -->
+        <!-- Заголовок сайта -->
         <div class="site-title">
-            <i class="fas fa-cloud-sun"></i>  
-            <span>пасмурные переводы / михаил</span>   <!-- замени на своё имя -->
+            <span>пасмурные переводы / михаил</span>
         </div>
 
-        <!-- Плашка донатов (толстая, со стимулами) -->
+        <!-- Плашка поддержки с адресами кошельков -->
         <div class="support-bar">
-            <div class="support-left">
-                <div class="support-text">
-                    <i class="fas fa-heart" style="color: #a13d3d;"></i> поддержать меня
-                </div>
-                <div class="support-links">
-                    <a href="#"><i class="fab fa-patreon"></i> Patreon</a>
-                    <a href="#"><i class="fas fa-mug-hot"></i> Boosty</a>
-                    <a href="#"><i class="fas fa-credit-card"></i> ЮMoney</a>
-                    <a href="#"><i class="fas fa-bell"></i> DonationAlerts</a>
-                </div>
+            <div class="support-header">
+                <i class="fas fa-mug-hot"></i> поддержать меня
             </div>
-            <div class="perks">
-                <p><i class="fas fa-gift"></i> что получаешь ты</p>
-                <ul>
-                    <li><i class="fas fa-check"></i> доступ к черновикам</li>
-                    <li><i class="fas fa-check"></i> ранние главы новых книг</li>
-                    <li><i class="fas fa-check"></i> имя в списке благодарностей</li>
-                    <li><i class="fas fa-check"></i> возможность голосовать за следующую книгу</li>
-                </ul>
+            <div class="crypto-list">
+                <!-- Bitcoin -->
+                <div class="crypto-item">
+                    <i class="fab fa-bitcoin"></i>
+                    <div class="crypto-info">
+                        <span class="crypto-name">Bitcoin</span>
+                        <span class="crypto-address">948d887v85</span>
+                    </div>
+                </div>
+                <!-- Monero -->
+                <div class="crypto-item">
+                    <i class="fas fa-coins"></i>
+                    <div class="crypto-info">
+                        <span class="crypto-name">Monero (XMR)</span>
+                        <span class="crypto-address">43a45d846dd354d6</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Короткое описание -->
+        <!-- Короткое описание проекта -->
         <div class="bio">
-            <i class="fas fa-feather" style="margin-right: 10px;"></i> 
-            привет! я перевожу книги, которые мне самому хочется прочесть. всё выкладываю бесплатно. если хочешь помочь financially или просто сказать спасибо — вот ссылки и стимулы выше.
+            привет! я перевожу книги, которые мне самому хочется прочесть. всё выкладываю бесплатно. если хочешь помочь финансово — выше адреса кошельков, а связаться можно внизу.
         </div>
 
-        <!-- Блок с тремя авторами (половина ширины) -->
+        <!-- Блок с авторами (которых перевожу) -->
         <div class="authors-box">
             <h3><i class="fas fa-feather-alt"></i> авторы, которых я перевожу</h3>
             <ul>
@@ -427,67 +402,66 @@
             </ul>
         </div>
 
-        <!-- Книги -->
-        <section class="books-section">
-            <h2><i class="fas fa-list-ul"></i> книги (готово и в процессе)</h2>
-            <div class="books-grid">
-                <!-- Карточка 1 -->
-                <div class="book-card">
-                    <div class="book-cover" title="обложка"></div>
-                    <div class="book-info">
-                        <div class="book-title">451° по Фаренгейту</div>
-                        <div class="book-author">Рэй Брэдбери</div>
-                        <span class="book-status">✓ переведена</span>
-                    </div>
-                    <div class="download-link">
-                        <a href="#" class="download-btn" download><i class="fas fa-download"></i> скачать</a>
-                        <span class="file-size">.epub, 1.4 МБ</span>
-                    </div>
-                </div>
-
-                <!-- Карточка 2 (в процессе) -->
-                <div class="book-card">
-                    <div class="book-cover" title="обложка"></div>
-                    <div class="book-info">
-                        <div class="book-title">Дюна</div>
-                        <div class="book-author">Фрэнк Герберт</div>
-                        <span class="book-status">⚙️ перевод идёт</span>
-                    </div>
-                    <div class="download-link">
-                        <span style="color: #4a4a4a; font-weight: 600;"><i class="far fa-clock"></i> скоро</span>
-                    </div>
-                </div>
-
-                <!-- Карточка 3 -->
-                <div class="book-card">
-                    <div class="book-cover" title="обложка"></div>
-                    <div class="book-info">
-                        <div class="book-title">Маленький принц</div>
-                        <div class="book-author">Антуан де Сент-Экзюпери</div>
-                        <span class="book-status">✓ переведена</span>
-                    </div>
-                    <div class="download-link">
-                        <a href="#" class="download-btn" download><i class="fas fa-download"></i> скачать</a>
-                        <span class="file-size">.pdf, 2.1 МБ</span>
-                    </div>
-                </div>
-
-                <!-- Карточка 4 -->
-                <div class="book-card">
-                    <div class="book-cover" title="обложка"></div>
-                    <div class="book-info">
-                        <div class="book-title">Психология влияния</div>
-                        <div class="book-author">Роберт Чалдини</div>
-                        <span class="book-status">✓ переведена</span>
-                    </div>
-                    <div class="download-link">
-                        <a href="#" class="download-btn" download><i class="fas fa-download"></i> скачать</a>
-                        <span class="file-size">.pdf, 3.2 МБ</span>
-                    </div>
+        <!-- Статья об одной книге (Дюна) -->
+        <article class="book-article">
+            <div class="article-header">
+                <div class="article-cover" title="обложка Дюны"></div>
+                <div class="article-title-block">
+                    <h1 class="article-title">Дюна</h1>
+                    <div class="article-author">Фрэнк Герберт</div>
+                    <div class="article-series">Серия: Хроники Дюны</div>
+                    <span class="article-status">⚙️ перевод идёт</span>
                 </div>
             </div>
-            <div class="caption">* переводы любительские, но стараюсь делать аккуратно. если хочешь помочь с вычиткой — пиши.</div>
-        </section>
+
+            <div class="article-content">
+                <p>
+                    «Дюна» — один из величайших научно-фантастических романов XX века. Действие разворачивается на пустынной планете Арракис, единственном источнике важнейшего ресурса — пряности меланжа. Здесь пересекаются интересы могущественных Домов, тайных обществ и самой Империи.
+                </p>
+                <p>
+                    Я начал переводить эту книгу, потому что давно хотел поделиться её глубиной и красотой с теми, кто предпочитает читать на русском. Работа идёт неспешно, но тщательно: уже готовы первые 15 глав. Важно сохранить стиль Герберта, его философские монологи и атмосферу пустыни.
+                </p>
+                <blockquote>
+                    «Страх — убийца разума. Страх — это маленькая смерть, за которой следует полное исчезновение. Я встречу свой страх лицом к лицу. Я позволю ему пройти через меня и сквозь меня».
+                </blockquote>
+                <p>
+                    Когда перевод будет завершён, я выложу книгу в двух форматах: EPUB (для читалок) и PDF (для печати или чтения на компьютере). Если хочешь ускорить процесс или просто поддержать проект, криптокошельки выше всегда открыты.
+                </p>
+            </div>
+
+            <div class="download-section">
+                <span style="color: #4a4a4a; font-weight: 600;"><i class="far fa-hourglass"></i> перевод в работе · скоро появится ссылка для скачивания</span>
+            </div>
+        </article>
+
+        <!-- Дополнительно можно добавить ещё одну статью, когда книга готова. Например, 451° по Фаренгейту уже переведена. -->
+        <article class="book-article" style="margin-top: 2rem;">
+            <div class="article-header">
+                <div class="article-cover" title="обложка 451°"></div>
+                <div class="article-title-block">
+                    <h1 class="article-title">451° по Фаренгейту</h1>
+                    <div class="article-author">Рэй Брэдбери</div>
+                    <div class="article-series">Серия: Классика фантастики</div>
+                    <span class="article-status">✓ переведена</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <p>
+                    Роман-антиутопия, рисующий мир, в котором книги под запретом и сжигаются специальными «пожарными». Главный герой, Гай Монтэг, начинает сомневаться в правильности системы и пытается сохранить хотя бы несколько текстов.
+                </p>
+                <p>
+                    Перевод выполнен полностью, текст вычитан, оформлен. Книга доступна для свободного скачивания. Пусть она напоминает нам о важности чтения и свободы мысли.
+                </p>
+            </div>
+
+            <div class="download-section">
+                <a href="#" class="download-btn-large" download><i class="fas fa-download"></i> скачать EPUB</a>
+                <span class="file-size-large">1.4 МБ</span>
+                <a href="#" class="download-btn-large" download style="margin-left: 0.5rem;"><i class="fas fa-download"></i> PDF</a>
+                <span class="file-size-large">2.1 МБ</span>
+            </div>
+        </article>
 
         <!-- Контакты -->
         <footer class="contact-footer">
@@ -500,7 +474,7 @@
             <div class="email-block">
                 <i class="far fa-envelope"></i>
                 <span class="email-label">Почта для связи:</span>
-                <a href="mailto:perevod@books.ru">perevod@books.ru</a>   <!-- замени -->
+                <a href="mailto:perevod@books.ru">perevod@books.ru</a>
             </div>
         </footer>
 
@@ -508,10 +482,10 @@
         <p style="font-size: 0.8rem; margin-top: 2.2rem; color: #3a3a3a; text-align: center;">все переводы бесплатны · поддержка помогает делать больше</p>
     </div>
 
-    <!-- Скрипт-заглушка (можно удалить) -->
+    <!-- Скрипт-заглушка для демо-ссылок -->
     <script>
         (function() {
-            document.querySelectorAll('.support-links a, .download-btn').forEach(link => {
+            document.querySelectorAll('.download-btn-large').forEach(link => {
                 link.addEventListener('click', (e) => {
                     if (link.getAttribute('href') === '#') {
                         e.preventDefault();

@@ -274,6 +274,23 @@
             color: #4a4a4a;
             font-weight: 500;
         }
+        .article-cover {
+    flex: 0 0 260px;           /* фиксированная ширина 260px */
+    aspect-ratio: 2/3;          /* соотношение сторон 2:3 (как у книги) */
+    background: #b0b0b0;        /* серый фон, если картинка не загрузится */
+    border: 3px solid #2f2f2f;  /* рамка */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;           /* обрезает всё, что вылезает за границы */
+}
+
+.article-cover img {
+    width: 100%;                /* ширина равна ширине родителя (260px) */
+    height: 100%;               /* высота равна высоте родителя */
+    object-fit: cover;          /* масштабирует и обрезает, чтобы полностью заполнить блок */
+    display: block;
+}
 
         /* Контакты */
         .contact-footer {
